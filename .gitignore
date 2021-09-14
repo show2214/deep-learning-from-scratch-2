@@ -2,3 +2,4 @@
 __pycache__/
 ptb.*.*
 *_*_pkl
+*.pkl

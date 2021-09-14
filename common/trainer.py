@@ -4,6 +4,7 @@ import numpy as np
 import time
 import matplotlib.pyplot as plt
 from common.np import *
+from common.util import clip_grads
 
 class Trainer:
     def __init__(self, model, optimizer):
