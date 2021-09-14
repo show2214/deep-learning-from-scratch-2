@@ -1,5 +1,8 @@
-import numpy as np
+import sys
+sys.path.append('..')
+from common.np import *  # import numpy as np
 from common.layers import Embedding, SigmoidWithLoss
+import collections
 
 class EmbeddingDot:
     def __init__(self, W):

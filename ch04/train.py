@@ -39,4 +39,4 @@ params['word_to_id'] = word_to_id
 params['id_to_word'] = id_to_word
 pkl_file = 'cbow_params_pkl'
 with open(pkl_file, 'wb') as f:
-    pickle.dump(prams, f, -1)
+    pickle.dump(params, f, -1)
