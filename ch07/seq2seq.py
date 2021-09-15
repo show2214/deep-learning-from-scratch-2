@@ -1,4 +1,6 @@
-import numpy as np
+# coding: utf-8
+import sys
+sys.path.append('..')
 from common.time_layers import *
 from common.base_model import BaseModel
 
@@ -7,9 +9,9 @@ class Encoder:
         V, D, H = vocab_size, wordvec_size, hidden_size
         rn = np.random.randn
 
-        embed_W = (rn(V, D)/ 100).astype('f')
-        lstm_Wx = (rn(D, 4 * H)/ np.sqrt(D)).astype('f')
-        lstm_Wh = (rn(H, 4 * H)/ np.sqrt(H)).astype('f')
+        embed_W = (rn(V, D) / 100).astype('f')
+        lstm_Wx = (rn(D, 4 * H) / np.sqrt(D)).astype('f')
+        lstm_Wh = (rn(H, 4 * H) / np.sqrt(H)).astype('f')
         lstm_b = np.zeros(4 * H).astype('f')
 
         self.embed = TimeEmbedding(embed_W)
@@ -38,11 +40,11 @@ class Decoder:
         V, D, H = vocab_size, wordvec_size, hidden_size
         rn = np.random.randn
 
-        embed_W = (rn(V, D)/ 100).astype('f')
-        lstm_Wx = (rn(D, 4 * H)/ np.sqrt(D)).astype('f')
-        lstm_Wh = (rn(H, 4 * H)/ np.sqrt(H)).astype('f')
+        embed_W = (rn(V, D) / 100).astype('f')
+        lstm_Wx = (rn(D, 4 * H) / np.sqrt(D)).astype('f')
+        lstm_Wh = (rn(H, 4 * H) / np.sqrt(H)).astype('f')
         lstm_b = np.zeros(4 * H).astype('f')
-        affine_W = (rn(H, V)/ np.sqrt(H)).astype('f')
+        affine_W = (rn(H, V) / np.sqrt(H)).astype('f')
         affine_b = np.zeros(V).astype('f')
 
         self.embed = TimeEmbedding(embed_W)
