@@ -293,7 +293,7 @@ class TimeLSTM:
     def backward(self, dhs):
         Wx, Wh, b = self.params
         N, T, H = dhs.shape
-        D = Wh.shape[0]
+        D = Wx.shape[0]
 
         dxs = np.empty((N, T, D), dtype='f')
         dh, dc = 0, 0
